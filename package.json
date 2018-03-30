@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/aatain/activities-by-interest-app/issues"
   },
-  "homepage": "https://github.com/aatain/activities-by-interest-app#readme"
+  "homepage": "https://github.com/aatain/activities-by-interest-app#readme",
+  "dependencies": {
+    "react": "^16.3.0"
+  },
+  "devDependencies": {
+    "babel-loader": "^7.1.4"
+  }
 }
