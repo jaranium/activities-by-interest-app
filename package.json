@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/aatain/activities-by-interest-app#readme",
   "dependencies": {
-    "react": "^16.3.0"
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0",
+    "react-redux": "^5.0.7"
   },
   "devDependencies": {
     "babel-loader": "^7.1.4"
