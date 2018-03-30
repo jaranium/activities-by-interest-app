@@ -1,27 +1,16 @@
 {
   "name": "activities-by-interest-app",
-  "version": "1.0.0",
-  "description": "Provide a user with activities in a desired city based on his/her interests",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jaranium/activities-by-interest-app.git"
-  },
-  "author": "Jake Acosta, Alyssa Atain, Riyad Shauk",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/aatain/activities-by-interest-app/issues"
-  },
-  "homepage": "https://github.com/aatain/activities-by-interest-app#readme",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
-    "react-redux": "^5.0.7"
+    "react-scripts": "1.1.1"
   },
-  "devDependencies": {
-    "babel-loader": "^7.1.4"
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   }
 }
