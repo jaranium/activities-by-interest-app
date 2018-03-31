@@ -1,8 +1,19 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 // import { connect } from 'react-redux';
 // import from child components...
 import InterestDisplay from '.././components/InterestDisplay.jsx'
 import SearchBox from '.././components/SearchBox.jsx'
+
+const mapStateToProps = store => ({
+  interests: store.profile.interests,
+});
+
+const mapDispatchToProps = dispatch => {
+
+};
+
 
 class ProfileContainer extends Component {
   constructor(props) {
@@ -11,7 +22,7 @@ class ProfileContainer extends Component {
       name: '',
       username: '',
       interests: [],
-      interestsCaptured: false,
+      interestsCaptured: true,
       city: ''
     };
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -63,7 +74,6 @@ handleSubmit(event) {
         </div>
       )
     }
-
   }
 
   render() {
@@ -73,4 +83,4 @@ handleSubmit(event) {
   }
 }
 
-export default ProfileContainer;
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileContainer);
