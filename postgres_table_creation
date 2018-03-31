@@ -14,7 +14,9 @@ CREATE TABLE "users" (
 
 CREATE TABLE "interests" (
 	"_id" serial NOT NULL,
-	"Interest" varchar(255) UNIQUE,
+	"Interestone" varchar(255) UNIQUE,
+	"Interesttwo" varchar(255) UNIQUE,
+	"Interestthree" varchar(255) UNIQUE,
 	CONSTRAINT interests_pk PRIMARY KEY ("_id")
 ) WITH (
   OIDS=FALSE
