@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 // import { connect } from 'react-redux';
 // import from child components...
 import InterestDisplay from '.././components/InterestDisplay.jsx'
-import PreSurvey from '.././components/PreSurvey.jsx'
 import SearchBox from '.././components/SearchBox.jsx'
 
 class ProfileContainer extends Component {
@@ -65,11 +64,6 @@ handleSubmit(event) {
       )
     }
 
-    else {
-      return (
-        <div><PreSurvey /></div>
-      )
-    }
   }
 
   render() {

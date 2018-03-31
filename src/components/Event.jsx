@@ -1,6 +1,5 @@
 
 //presentation component that renders a single box for each event
-
 import React from 'react';
 
 const Event = props => {
