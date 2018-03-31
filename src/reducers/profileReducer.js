@@ -2,9 +2,9 @@
 import * as types from '../constants/actionTypes';
 
 const initialState = {
-    username: 'apples',
-    password: 'banana',
     email: 'codysmith@gmail.com',
+    password: 'banana',
+    username: 'apples',
     name: 'Cody',
     interests: ['', '', ''],
     events: [{name: 'wine tasting'},{name: 'animal sightseeing'},{name: 'salsa dancing'},{name: 'hackathon'}],
