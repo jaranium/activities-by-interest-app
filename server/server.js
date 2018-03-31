@@ -1,4 +1,5 @@
 const express = require('express');
+<<<<<<< HEAD:server.js
 //deleted express.router bc does not add essential functionality
 //const app = express(); Do we need 'app' if we have express.router?
 const pg = require('pg');
@@ -7,11 +8,25 @@ const bodyParser = require('body-parser');
 //adding process after reading Heroku docs and seeing new requirements
 const db = process.env.DATABASE_URL || 'postgres://localhost:5555/interest_app';
 
+=======
+// const router = express.Router()
+const router = express();
+//const app = express(); Do we need 'app' if we have express.router?
+const pg = require('pg');
+const path = require('path')
+const bodyParser = require('body-Parser');
+const connectionString = 'postgres://localhost:5555/interest_app';
+>>>>>>> 457b3651d7508a4e6554253adee5a57c890acccd:server/server.js
 // Do we have imports from another file?
 
-const client = new pg.Client(connectionString);
+const client = new pg.Client({
+  host: connectionString,
+  port: 5555
+});
+
 client.connect();
 
+<<<<<<< HEAD:server.js
 //Note for developers: GET/POST reqs are ordered by user story rather than all gets and posts together
 //creates post request from server to db to generate and save new user info
 
@@ -80,14 +95,24 @@ app.post('/signup', (req, res, next) => {
   const loginInfo = {
     console.log(req.body),
     username: req.body.username,
+=======
+router.use(bodyParser.urlencoded({ extended: true }));
+router.use(bodyParser.json());
+
+router.post('/api/signup', (req, res, next) => {
+  console.log("req.body in user post req", req.body)
+
+  const userInfoChunk = [];
+  const loginInfo = {
+    // username: req.body.username,
+>>>>>>> 457b3651d7508a4e6554253adee5a57c890acccd:server/server.js
     password: req.body.password,
     email: req.body.email
   }
   pg.connect(connectionString, (err, client, done) => {
     if(err) {
-      done();
       console.log(err, 'SOMETHING IS NOT RIGHT');
-      return res.status(500).json({success: false, data: err})
+      return res.status(500).json({success: false, data: err})  //return automatically ends this middleware
     }
     client.query('INSERT INTO users(user_id, password, email) values(req.body.username, req.body.password, req.body.email)')
     query.on('row', (row) => {
@@ -99,4 +124,16 @@ app.post('/signup', (req, res, next) => {
   });
 });
 
+<<<<<<< HEAD:server.js
 app.listen(8080, console.log('listening and ready!'))
+=======
+// app.get('/', (req, res) => {
+//   console.log(req.body)
+//   res.sendFile(path.join(__dirname, './../profile'))
+// });
+
+const port = 5555;
+router.listen(port, () => console.log(`Listening on port ${port}`));
+
+module.exports = router;
+>>>>>>> 457b3651d7508a4e6554253adee5a57c890acccd:server/server.js

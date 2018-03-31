@@ -18,8 +18,8 @@ class MainContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      signedUp: true,
-      interestsCaptured: true,
+      signedUp: false,
+      interestsCaptured: false,
       email: '',
       password: '',
     }
@@ -27,14 +27,14 @@ class MainContainer extends Component {
   }
 
   handleSubmit = (e) => {
-    console.log('in HS')
+    console.log('in HS', this.state)
     e.preventDefault();
     let userInfo = {
       password: this.state.password,
       email: this.state.email
     };
     console.log('userinfo before fetch', userInfo)
-    fetch('/signup', {
+    fetch('/api/signup', {
       method: "POST",
       body: JSON.stringify(userInfo),
       credentials: true,
