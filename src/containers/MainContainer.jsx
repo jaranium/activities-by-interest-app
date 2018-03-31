@@ -18,8 +18,8 @@ class MainContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      signedUp: true,
-      interestsCaptured: true,
+      signedUp: false,
+      interestsCaptured: false,
       email: '',
       password: '',
     }
