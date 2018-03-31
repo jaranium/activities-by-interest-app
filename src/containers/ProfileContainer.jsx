@@ -12,7 +12,7 @@ class ProfileContainer extends Component {
       name: '',
       username: '',
       interests: [],
-      interestsCaptured: true,
+      interestsCaptured: false,
       city: ''
     };
     this.handleInputChange = this.handleInputChange.bind(this);
