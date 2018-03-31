@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PreSurvey = props => {
+const Survey = props => {
 return (
     <form>
 
@@ -76,4 +76,4 @@ return (
 )
 }
 
-export default PreSurvey;
+export default Survey;
