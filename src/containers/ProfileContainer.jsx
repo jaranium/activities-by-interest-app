@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 // import from child components...
 import InterestDisplay from '.././components/InterestDisplay.jsx'
 import PreSurvey from '.././components/PreSurvey.jsx'
+import SearchBox from '.././components/SearchBox.jsx'
 
 class ProfileContainer extends Component {
   constructor(props) {
@@ -11,11 +12,24 @@ class ProfileContainer extends Component {
       name: '',
       username: '',
       interests: [],
-      interestsCaptured: true,
+      interestsCaptured: false,
+      city: ''
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.profilePage = this.profilePage.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+handleChange(event) {
+  this.setState({value: event.target.value});
+}
+
+handleSubmit(event) {
+  alert('Your favorite flavor is: ' + this.state.value);
+  event.preventDefault();
+}
+
 
   handleInputChange(event) {
     const target = event.target;
@@ -44,6 +58,7 @@ class ProfileContainer extends Component {
           <div className="outerBox">
             <h2>Welcome Bob!</h2>
             <div>This is your profile page</div>
+            <SearchBox handleChange={this.handleChange}  handleSubmit={this.handleSubmit}/>
             <InterestDisplay events={this.props.events} interests={this.props.interests}/>
           </div>
         </div>

@@ -44,7 +44,7 @@ class MainContainer extends Component {
         console.log('body in second then', body)
         this.setState({ isUser: true });
       }).catch(err => {
-        console.log('error signing up')
+        console.log('error signing up from Main Container')
       })
   }
 
