@@ -1,0 +1,33 @@
+-Taken from dbdesigner.net schema
+-Will create tables for User, Interest, and Join table for both
+-Foreign keys in Join point to users and interests
+
+CREATE TABLE "users" (
+	"_id" serial NOT NULL,
+	"username" varchar(255) UNIQUE,
+	"password" varchar(255),
+	"email" varchar(255) UNIQUE,
+	CONSTRAINT users_pk PRIMARY KEY ("_id")
+) WITH (
+  OIDS=FALSE
+);
+
+CREATE TABLE "interests" (
+	"_id" serial NOT NULL,
+	"Interest" varchar(255) UNIQUE,
+	CONSTRAINT interests_pk PRIMARY KEY ("_id")
+) WITH (
+  OIDS=FALSE
+);
+
+CREATE TABLE "join-users-to-interests" (
+	"_id" serial NOT NULL,
+	"user_id" varchar UNIQUE,
+	"interest_id" varchar,
+	CONSTRAINT join-users-to-interests_pk PRIMARY KEY ("_id")
+) WITH (
+  OIDS=FALSE
+);
+
+ALTER TABLE "join-users-to-interests" ADD CONSTRAINT "join-users-to-interests_fk0" FOREIGN KEY ("user_id") REFERENCES "users"("_id");
+ALTER TABLE "join-users-to-interests" ADD CONSTRAINT "join-users-to-interests_fk1" FOREIGN KEY ("interest_id") REFERENCES "interests"("_id");
