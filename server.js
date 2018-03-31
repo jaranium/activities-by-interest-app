@@ -3,15 +3,20 @@ const router = express.Router()
 //const app = express(); Do we need 'app' if we have express.router?
 const pg = require('pg');
 const path = require('path')
-const db = 'postgres://localhost:5555/interest_app';
+const bodyParser = require('body-parser');
+//adding process after reading Heroku docs and seeing new requirements
+const db = process.env.DATABASE_URL || 'postgres://localhost:5555/interest_app';
+
 // Do we have imports from another file?
 
 const client = new pg.Client(connectionString);
 client.connect();
 
+//creates post request from server to db to generate and save new user info
 router.post('/', (req, res, next) => {
   const userInfoChunk = [];
   const loginInfo = {
+    console.log(boq.body)
     username: req.body.username,
     password: req.body.password,
     email: req.body.email
