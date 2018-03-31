@@ -14,6 +14,7 @@ CREATE TABLE "users" (
 
 CREATE TABLE "interests" (
 	"_id" serial NOT NULL,
+	//giving more specific columns to table (3 entries for MVP, but can expand to include as many as desired)
 	"Interestone" varchar(255) UNIQUE,
 	"Interesttwo" varchar(255) UNIQUE,
 	"Interestthree" varchar(255) UNIQUE,

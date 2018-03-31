@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 app.get('/login', (req, res) => {
   console.log('Connected to login');
   res.set({'content-type': 'text-html', 'charset': 'UTF-8'});
-  res.status(200).sendFile('./cheapeats/submissions/submit.html');
+  res.status(200).sendFile('./ ');
 });
 
 app.post('/signup', (req, res, next) => {
