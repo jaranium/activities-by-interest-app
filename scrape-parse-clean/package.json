@@ -1,0 +1,48 @@
+{
+  "name": "activities-by-interest-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "echo \"Start is unnecessary in this module\" && exit 1 && node server.js",
+    "build": "mkdir -p src && mkdir -p lib && mkdir -p data && tsc --emitDeclarationOnly && babel src --out-dir lib --extensions \".ts,.tsx\"",
+    "type-check": "tsc --noEmit",
+    "test-scraper": "NODE_ENV=test mocha lib/scraper.spec.js",
+    "test-parser": "NODE_ENV=test mocha lib/parser.spec.js",
+    "test-cleaner": "NODE_ENV=development mocha lib/cleaner.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaranium/activities-by-interest-app.git"
+  },
+  "author": "Jake Acosta, Alyssa Atain, Riyad Shauk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jaranium/activities-by-interest-app/issues"
+  },
+  "homepage": "https://github.com/jaranium/activities-by-interest-app#readme",
+  "dependencies": {
+    "request": "^2.85.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.42",
+    "@babel/core": "^7.0.0-beta.42",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.42",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.42",
+    "@babel/preset-env": "^7.0.0-beta.42",
+    "@babel/preset-typescript": "^7.0.0-beta.42",
+    "@types/chai": "^4.1.2",
+    "@types/cheerio": "^0.22.7",
+    "@types/jasmine": "^2.8.6",
+    "@types/node": "^9.6.1",
+    "@types/request": "^2.47.0",
+    "ajv": "^6.4.0",
+    "ajv-keywords": "^3.1.0",
+    "babel-loader": "^8.0.0-beta.0",
+    "chai": "^4.1.2",
+    "cheerio": "^1.0.0-rc.2",
+    "mocha": "^5.0.5",
+    "typescript": "^2.7.2"
+  }
+}
