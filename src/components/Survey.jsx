@@ -2,6 +2,7 @@ import React from 'react';
 
 const Survey = props => {
 return (
+    
     <form>
 
         <h1>Tell us about yourself </h1>
