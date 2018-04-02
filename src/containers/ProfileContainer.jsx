@@ -8,6 +8,8 @@ import SearchBox from '.././components/SearchBox.jsx'
 
 const mapStateToProps = store => ({
   interests: store.profile.interests,
+  events: store.profile.events,
+
 });
 
 const mapDispatchToProps = dispatch => {
