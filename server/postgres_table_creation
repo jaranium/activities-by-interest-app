@@ -4,7 +4,6 @@
 
 CREATE TABLE "users" (
 	"_id" serial NOT NULL,
-	"username" varchar(255) UNIQUE,
 	"password" varchar(255),
 	"email" varchar(255) UNIQUE,
 	CONSTRAINT users_pk PRIMARY KEY ("_id")
