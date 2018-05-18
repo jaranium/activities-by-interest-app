@@ -11,7 +11,9 @@ const mapStateToProps = store => ({
 });
 
 const mapDispatchToProps = dispatch => {
-
+  return {
+    testInfo: "test mapDispatchToProps info"  
+  }
 };
 
 class MainContainer extends Component {
@@ -27,14 +29,13 @@ class MainContainer extends Component {
   }
 
   handleSubmit = (e) => {
-    console.log('in HS', this.state)
     e.preventDefault();
     let userInfo = {
       password: this.state.password,
       email: this.state.email
     };
     console.log('userinfo before fetch', userInfo)
-    fetch('/api/signup', {
+    fetch('http://localhost:5432/signup', {
       method: "POST",
       body: JSON.stringify(userInfo),
       credentials: true,

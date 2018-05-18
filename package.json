@@ -2,17 +2,18 @@
   "name": "activities-by-interest-app",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:5555",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "server": "nodemon ./server/server.js",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "snippets": "https://gist.github.com/Paulg05/f168a5b58c573c16f726ca0b7ad3ac81.js"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.3",
+    "nodemon": "^1.17.4",
     "pg": "^7.4.1",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
